@@ -18,6 +18,8 @@ b = Vector2(-864, -8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ysvq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ysvq"]
+
 [node name="Pong" type="Node2D" unique_id=1430623094]
 
 [node name="Paddles" type="Node" parent="." unique_id=1328552180]
@@ -91,6 +93,15 @@ vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=777507909]
 shape = SubResource("CircleShape2D_5ysvq")
+
+[node name="Testing_body" type="RigidBody2D" parent="." unique_id=2136003039]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Testing_body" unique_id=417149631]
+shape = SubResource("RectangleShape2D_5ysvq")
+
+[node name="Label" type="Label" parent="." unique_id=1827746223]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="body_entered" from="Left_and_Right_Col" to="Left_and_Right_Col" method="_on_body_entered"]
 [connection signal="body_entered" from="Top_and_Bot_Col2" to="Top_and_Bot_Col2" method="_on_body_entered"]
