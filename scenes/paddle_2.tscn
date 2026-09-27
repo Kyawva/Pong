@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bf1qomu20ehsi"]
+
+[ext_resource type="Script" uid="uid://cqlyvmeql3j2w" path="res://scripts/Player2.gd" id="1_410yp"]
+[ext_resource type="Texture2D" uid="uid://biydj3dkbsued" path="res://assets/Test Paddle 2.png" id="2_fryq0"]
+[ext_resource type="Script" uid="uid://xu52sc5tr51g" path="res://scripts/movement_direction.gd" id="3_ecpbj"]
+[ext_resource type="Script" uid="uid://ceax0qc5q0nwq" path="res://scripts/Movement_component.gd" id="4_6kuo8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uefm3"]
+radius = 17.0
+height = 188.0
+
+[node name="Paddle2" type="CharacterBody2D" unique_id=1279994577]
+collision_layer = 2
+script = ExtResource("1_410yp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1634035524]
+position = Vector2(-18, 2)
+shape = SubResource("CapsuleShape2D_uefm3")
+
+[node name="TestPaddle2" type="Sprite2D" parent="." unique_id=1101229940]
+position = Vector2(-2, 0)
+scale = Vector2(1.2283465, 1.1416667)
+texture = ExtResource("2_fryq0")
+
+[node name="movement_direction" type="Node" parent="." unique_id=1009330688 node_paths=PackedStringArray("body", "model") groups=["Paddle"]]
+unique_name_in_owner = true
+script = ExtResource("3_ecpbj")
+velocity = 250
+body = NodePath("..")
+model = NodePath("../TestPaddle2")
+metadata/_custom_type_script = "uid://xu52sc5tr51g"
+
+[node name="Movement_component" type="Node" parent="." unique_id=264249444]
+script = ExtResource("4_6kuo8")
+metadata/_custom_type_script = "uid://ceax0qc5q0nwq"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=485430917 groups=["Paddle"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1644287347]
+position = Vector2(-18, 2)
+shape = SubResource("CapsuleShape2D_uefm3")
