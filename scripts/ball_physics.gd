@@ -4,15 +4,12 @@ class_name ball_physics extends Node
 
 
 var angle:float
-	#set(value):
-#		if value == 0:
-#			print("asd")
-#			angle = deg_to_rad(40)
+
 @export var body: CharacterBody2D
 
 
 @export var speed: int = 300
-var originial_speed = 300
+var originial_speed = 400
 var angle_debounce: bool = true
 var direction1: float
 var direction2: float
@@ -26,9 +23,8 @@ var ball_inside: bool = true
 
 
 func _ready() -> void:
-	angle = deg_to_rad(150*randf_range(-1,1))
-
-
+	angle_change()
+	speed = originial_speed
 	body.collision_layer = 2
 	#no_collision_long()
 	collision.bouncey.connect(bounce)
@@ -46,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		body.position.y = 245
 		Global.end = false
 		speed = originial_speed
-		angle = deg_to_rad(50*randi_range(-1,1))
+		angle_change()
 
 	body.move_and_slide()
 
@@ -56,7 +52,7 @@ func bounce(identifier:String) -> void:
 		if speed_up_once:
 			speed = originial_speed
 			speed_up_once = false
-		print(body.velocity.y)
+		print(angle)
 		
 		if body.position.x < 600:
 			if (direction1 < 0 and body.velocity.y < 0) or (direction1 > 0 and body.velocity.y > 0):
@@ -81,3 +77,9 @@ func _on_timer_timeout() -> void:
 	timer.stop()
 	speed += 500
 	speed_up_once = true
+
+func angle_change() -> void:
+	angle = deg_to_rad(50*randi_range(-1,1))
+	
+	if angle == 0:
+		angle = deg_to_rad(80)
