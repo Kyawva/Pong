@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://b1a826je6twwl"]
+
+[ext_resource type="PackedScene" uid="uid://bkadht57160lf" path="res://scenes/Paddle.tscn" id="1_78awf"]
+[ext_resource type="Script" uid="uid://gf56q874n40a" path="res://scripts/paddles.gd" id="1_s0nni"]
+[ext_resource type="PackedScene" uid="uid://bf1qomu20ehsi" path="res://scenes/paddle_2.tscn" id="2_s0nni"]
+[ext_resource type="PackedScene" uid="uid://bhjsltfvg31mj" path="res://scenes/Ball.tscn" id="4_kiw3p"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5ysvq"]
+a = Vector2(0, -648)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rnjyy"]
+a = Vector2(213, -26)
+b = Vector2(-939, -26)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4vge2"]
+a = Vector2(288, -8)
+b = Vector2(-864, -8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ysvq"]
+
+[node name="Pong" type="Node2D" unique_id=1430623094]
+
+[node name="Paddles" type="Node" parent="." unique_id=1328552180]
+script = ExtResource("1_s0nni")
+
+[node name="Paddle" parent="Paddles" unique_id=1279994577 instance=ExtResource("1_78awf")]
+position = Vector2(78, 326)
+
+[node name="Paddle2" parent="Paddles" unique_id=441041588 instance=ExtResource("2_s0nni")]
+position = Vector2(1076, 326)
+rotation = -3.1415927
+
+[node name="Borders" type="Node" parent="." unique_id=1136810267]
+
+[node name="Left_and_Right_Col" type="Area2D" parent="." unique_id=1268768947 groups=["Border_left_right"]]
+position = Vector2(584, 0)
+
+[node name="Left" type="CollisionShape2D" parent="Left_and_Right_Col" unique_id=911197448]
+position = Vector2(-584, 648)
+shape = SubResource("SegmentShape2D_5ysvq")
+
+[node name="Right" type="CollisionShape2D" parent="Left_and_Right_Col" unique_id=489975782]
+position = Vector2(569, 639)
+shape = SubResource("SegmentShape2D_5ysvq")
+
+[node name="Top_and_Bot_Col2" type="Area2D" parent="." unique_id=749174402 groups=["Border"]]
+position = Vector2(584, 0)
+
+[node name="Top boundry" type="CollisionShape2D" parent="Top_and_Bot_Col2" unique_id=1778560591]
+position = Vector2(355, 26)
+shape = SubResource("SegmentShape2D_rnjyy")
+
+[node name="Bottom" type="CollisionShape2D" parent="Top_and_Bot_Col2" unique_id=871400382]
+position = Vector2(280, 656)
+shape = SubResource("SegmentShape2D_4vge2")
+
+[node name="Ball" parent="." unique_id=654893227 instance=ExtResource("4_kiw3p")]
+position = Vector2(245, 152)
+
+[node name="Control" type="Control" parent="." unique_id=1414983285]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1238402857]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 58.0
+offset_right = 310.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=540437604]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 58.0
+offset_right = 914.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1502660410]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1004181662]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=777507909]
+shape = SubResource("CircleShape2D_5ysvq")
+
+[connection signal="body_entered" from="Left_and_Right_Col" to="Left_and_Right_Col" method="_on_body_entered"]
+[connection signal="body_entered" from="Top_and_Bot_Col2" to="Top_and_Bot_Col2" method="_on_body_entered"]

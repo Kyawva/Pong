@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bhjsltfvg31mj"]
+
+[ext_resource type="Texture2D" uid="uid://5lhn733s4bdf" path="res://assets/Ball_Pong.png" id="1_v3wuo"]
+[ext_resource type="Script" uid="uid://do8v1wjvtsmt2" path="res://scripts/ball_physics.gd" id="2_ja1hk"]
+[ext_resource type="Script" uid="uid://bodegi8ao34yl" path="res://scripts/collision.gd" id="3_ul5l2"]
+[ext_resource type="Script" uid="uid://ceax0qc5q0nwq" path="res://scripts/Movement_component.gd" id="4_dqebh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ysvq"]
+radius = 38.639893
+
+[node name="Ball" type="CharacterBody2D" unique_id=654893227]
+collision_layer = 2
+
+[node name="BallPong" type="Sprite2D" parent="." unique_id=2105169679]
+position = Vector2(309, 138.00002)
+scale = Vector2(0.30544528, 0.3009211)
+texture = ExtResource("1_v3wuo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721234503]
+position = Vector2(310, 138)
+scale = Vector2(0.647, 0.6)
+shape = SubResource("CircleShape2D_5ysvq")
+
+[node name="ball_physics" type="Node" parent="." unique_id=2053881573 node_paths=PackedStringArray("body")]
+script = ExtResource("2_ja1hk")
+body = NodePath("..")
+metadata/_custom_type_script = "uid://do8v1wjvtsmt2"
+
+[node name="Timer" type="Timer" parent="." unique_id=519208153]
+wait_time = 3.0
+
+[node name="collision" type="Area2D" parent="." unique_id=1141118752]
+script = ExtResource("3_ul5l2")
+metadata/_custom_type_script = "uid://bodegi8ao34yl"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collision" unique_id=2046301693]
+position = Vector2(310, 138)
+scale = Vector2(0.647, 0.6)
+shape = SubResource("CircleShape2D_5ysvq")
+
+[node name="Movement_component" type="Node" parent="." unique_id=1015417567]
+script = ExtResource("4_dqebh")
+metadata/_custom_type_script = "uid://ceax0qc5q0nwq"
+
+[connection signal="timeout" from="Timer" to="ball_physics" method="_on_timer_timeout"]
+[connection signal="area_entered" from="collision" to="collision" method="_on_area_entered"]
