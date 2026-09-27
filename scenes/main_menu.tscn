@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://s7wgnbiqw150"]
 
-[ext_resource type="Script" uid="uid://bk1x5bk0fix8f" path="res://scripts/buttons.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://bk1x5bk0fix8f" path="res://scripts/buttons.gd" id="1_l6cm7"]
 
 [node name="MainMenu" type="Node2D" unique_id=1957934073]
-script = ExtResource("1_06t4h")
+script = ExtResource("1_l6cm7")
 
 [node name="Buttons" type="Control" parent="." unique_id=991863980]
 layout_mode = 3

@@ -30,7 +30,7 @@ func _ready() -> void:
 
 
 	body.collision_layer = 2
-	no_collision_long()
+	#no_collision_long()
 	collision.bouncey.connect(bounce)
 	
 
