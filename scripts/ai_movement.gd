@@ -13,12 +13,11 @@ func _physics_process(delta: float) -> void:
 	if ball == null:
 		return
 	
-	if ball.position.y < position.y and chance_to_move >= 50:
-		movement_direction.direction = 1
-	if ball.position.y > position.y and chance_to_move >= 50:
+	if ball.position.y < position.y and chance_to_move >= 80:
 		movement_direction.direction = -1
+	if ball.position.y > position.y and chance_to_move >= 80:
+		movement_direction.direction = 1
 	
-	#(print(movement_direction.direction))
-	
+
 	movement_direction.tick(delta)
 		 

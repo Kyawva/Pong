@@ -28,8 +28,6 @@ position = Vector2(78, 326)
 position = Vector2(1076, 326)
 rotation = -3.1415927
 
-[node name="Borders" type="Node" parent="." unique_id=1136810267]
-
 [node name="Left_and_Right_Col" type="Area2D" parent="." unique_id=1268768947 groups=["Border_left_right"]]
 position = Vector2(584, 0)
 

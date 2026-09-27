@@ -10,6 +10,7 @@ radius = 17.0
 height = 188.0
 
 [node name="AI" type="CharacterBody2D" unique_id=848173863]
+collision_layer = 2
 script = ExtResource("1_wnyw1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=522432504]
