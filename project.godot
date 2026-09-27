@@ -17,7 +17,7 @@ config/icon="res://scenes/icon.svg"
 
 [autoload]
 
-Global="*uid://dfbhgooyhuwf4"
+Gamemanager="*uid://dfbhgooyhuwf4"
 
 [display]
 

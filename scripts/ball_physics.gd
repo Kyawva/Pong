@@ -31,18 +31,20 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	
+
 	direction1 = Input.get_axis("Up", "Down")
 	direction2 = Input.get_axis("Down2","Up2")
 	body.velocity.x = speed * cos(angle)  
 	body.velocity.y = speed * sin(angle)
 
-	if Global.end:
-		body.position.x = 245
-		body.position.y = 245
-		Global.end = false
+	if Gamemanager.end:
+		body.position.x = 584
+		body.position.y = 326
+		Gamemanager.end = false 
 		speed = originial_speed
 		angle_change()
+		
+		
 
 	body.move_and_slide()
 
@@ -79,7 +81,7 @@ func _on_timer_timeout() -> void:
 	speed_up_once = true
 
 func angle_change() -> void:
-	angle = deg_to_rad(50*randi_range(-1,1))
-	
+	angle = deg_to_rad(170*randi_range(-1,1))
+	print(angle)
 	if angle == 0:
-		angle = deg_to_rad(80)
+		angle = deg_to_rad(160)

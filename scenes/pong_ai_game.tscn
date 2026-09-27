@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwvjhaxejtgce"]
 
 [ext_resource type="Script" uid="uid://gf56q874n40a" path="res://scripts/paddles.gd" id="1_hhnvi"]
+[ext_resource type="Script" uid="uid://co28nlsggmu1u" path="res://scripts/game.gd" id="1_wstbl"]
 [ext_resource type="PackedScene" uid="uid://bkadht57160lf" path="res://scenes/Paddle.tscn" id="2_h0bsx"]
 [ext_resource type="PackedScene" uid="uid://cqed6155whd33" path="res://scenes/ai.tscn" id="2_wstbl"]
 [ext_resource type="PackedScene" uid="uid://bhjsltfvg31mj" path="res://scenes/Ball.tscn" id="3_wstbl"]
@@ -17,6 +18,7 @@ a = Vector2(288, -8)
 b = Vector2(-864, -8)
 
 [node name="Pong_AI_Game" type="Node2D" unique_id=608534626]
+script = ExtResource("1_wstbl")
 
 [node name="Paddles" type="Node" parent="." unique_id=2035070969]
 script = ExtResource("1_hhnvi")

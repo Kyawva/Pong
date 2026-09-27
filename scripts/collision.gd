@@ -20,7 +20,9 @@ func _on_area_entered(area: Area2D) -> void:
 		print(ball_physics.body.position.x)
 		if ball_physics.body.position.x > 250: 
 			#first paddle is neg pos and second is pos 
-			scored.emit(1)
+			#scored.emit(1)
+			Gamemanager.on_score(1)
 		else:
-			scored.emit(2)
+			#scored.emit(2)
+			Gamemanager.on_score(2)
 			

@@ -11,17 +11,15 @@ extends Node
 func _ready() -> void:
 	# without ../ it will go into the paddle parent node
 	#need it to check sibling node which is ball
-	$"../Ball/collision".scored.connect(_on_scored)
+	Gamemanager.Change_score.connect(_on_scored)
 	
-func _on_scored(player:int) ->void:
+func _on_scored(player:int, score:int) ->void:
 	if player ==1:
-		Global.score1 += 1
-		label.text = str(Global.score1)
+		label.text = str(score)
 	else:
-		Global.score2 += 1
-		label_2.text = str(Global.score2)
+		label_2.text = str(score)
 	
-	Global.end = true
+	Gamemanager.end = true
 	
 	
 		
