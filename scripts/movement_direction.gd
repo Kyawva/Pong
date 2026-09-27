@@ -7,13 +7,13 @@ class_name movement_direction extends Node
 @export var model : Node2D
 var p 
 var direction : int 
-var border_stop_move : bool = false
+
 	
 func tick(_delta) -> void:
 	if body == null:
 		return 
 	body.position.y = clamp(body.position.y,90,553)
-	body.velocity.y = direction * velocity 	
+	body.velocity.y = direction * velocity
 	
 	body.move_and_slide()
 

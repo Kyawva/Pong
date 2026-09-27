@@ -22,7 +22,7 @@ position = Vector2(-2, 0)
 scale = Vector2(1.2283465, 1.1416667)
 texture = ExtResource("2_fryq0")
 
-[node name="movement_direction" type="Node" parent="." unique_id=1009330688 node_paths=PackedStringArray("body", "model") groups=["Paddle"]]
+[node name="movement_direction" type="Node" parent="." unique_id=1009330688 node_paths=PackedStringArray("body", "model")]
 unique_name_in_owner = true
 script = ExtResource("3_ecpbj")
 velocity = 250

@@ -1,6 +1,7 @@
 class_name movement_player2 extends CharacterBody2D
 
 @onready var movement_component: Movement_component = $Movement_component
+
 @onready var movement_direction: movement_direction = $movement_direction
 
 

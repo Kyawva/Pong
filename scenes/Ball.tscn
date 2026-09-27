@@ -12,12 +12,12 @@ radius = 38.639893
 collision_layer = 2
 
 [node name="BallPong" type="Sprite2D" parent="." unique_id=2105169679]
-position = Vector2(309, 138.00002)
+position = Vector2(-1.2084503, 0.11053467)
 scale = Vector2(0.30544528, 0.3009211)
 texture = ExtResource("1_v3wuo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721234503]
-position = Vector2(310, 138)
+position = Vector2(-0.20848083, 0.11050415)
 scale = Vector2(0.647, 0.6)
 shape = SubResource("CircleShape2D_5ysvq")
 
@@ -34,7 +34,7 @@ script = ExtResource("3_ul5l2")
 metadata/_custom_type_script = "uid://bodegi8ao34yl"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="collision" unique_id=2046301693]
-position = Vector2(310, 138)
+position = Vector2(-0.20848083, 0.11050415)
 scale = Vector2(0.647, 0.6)
 shape = SubResource("CircleShape2D_5ysvq")
 

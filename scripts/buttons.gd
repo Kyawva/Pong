@@ -6,7 +6,7 @@ func _on_player_v_player_pressed() -> void:
 
 
 func _on_player_v_ai_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/pong_ai_game.tscn")
 
 
 func _on_quit_pressed() -> void:
