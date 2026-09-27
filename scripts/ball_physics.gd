@@ -35,7 +35,7 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	print(angle)
+
 	direction1 = Input.get_axis("Up", "Down")
 	direction2 = Input.get_axis("Down2","Up2")
 	body.velocity.x = speed * cos(angle)  
