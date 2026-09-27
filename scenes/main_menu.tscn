@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://s7wgnbiqw150"]
+
+[ext_resource type="Script" uid="uid://bk1x5bk0fix8f" path="res://scripts/buttons.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Node2D" unique_id=1957934073]
+script = ExtResource("1_l6cm7")
+
+[node name="Buttons" type="Control" parent="." unique_id=991863980]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player v Player" type="Button" parent="Buttons" unique_id=1501279838]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.800001
+anchor_bottom = 16.2
+offset_left = 367.0
+offset_top = 79.0
+offset_right = -339.28003
+offset_bottom = -453.68002
+text = "Player Vs Player
+"
+
+[node name="Player V AI" type="Button" parent="Buttons" unique_id=211626944]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 270.0
+offset_right = 812.72
+offset_bottom = 385.32
+text = "Player Vs AI"
+
+[node name="Quit" type="Button" parent="Buttons" unique_id=1395632117]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 460.0
+offset_right = 814.72
+offset_bottom = 575.32
+text = "Quit"
+
+[connection signal="pressed" from="Buttons/Player v Player" to="." method="_on_player_v_player_pressed"]
+[connection signal="pressed" from="Buttons/Player V AI" to="." method="_on_player_v_ai_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]

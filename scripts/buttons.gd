@@ -1,0 +1,13 @@
+extends Node2D
+
+
+func _on_player_v_player_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+
+
+func _on_player_v_ai_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

@@ -26,11 +26,11 @@ var ball_inside: bool = true
 
 
 func _ready() -> void:
-	angle = deg_to_rad(50*randi_range(-1,1))
+	angle = deg_to_rad(50*randf_range(-1,1))
 
 
 	body.collision_layer = 2
-	no_collision_long()
+	#no_collision_long()
 	collision.bouncey.connect(bounce)
 	
 

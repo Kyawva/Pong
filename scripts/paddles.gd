@@ -1,6 +1,7 @@
 extends Node
-@onready var label: Label = $"../Control/Label"
-@onready var label_2: Label = $"../Control/Label2"
+
+@onready var label: Label = $"../Score/Label"
+@onready var label_2: Label = $"../Score/Label2"
 
 
 
