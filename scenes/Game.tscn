@@ -16,10 +16,6 @@ b = Vector2(-939, -26)
 a = Vector2(288, -8)
 b = Vector2(-864, -8)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5ysvq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ysvq"]
-
 [node name="Pong" type="Node2D" unique_id=1430623094]
 
 [node name="Paddles" type="Node" parent="." unique_id=1328552180]
@@ -59,13 +55,13 @@ shape = SubResource("SegmentShape2D_4vge2")
 [node name="Ball" parent="." unique_id=654893227 instance=ExtResource("4_kiw3p")]
 position = Vector2(245, 152)
 
-[node name="Control" type="Control" parent="." unique_id=1414983285]
+[node name="Score" type="Control" parent="." unique_id=1414983285]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Control" unique_id=1238402857]
+[node name="Label" type="Label" parent="Score" unique_id=1238402857]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 58.0
@@ -76,7 +72,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control" unique_id=540437604]
+[node name="Label2" type="Label" parent="Score" unique_id=540437604]
 layout_mode = 0
 offset_left = 796.0
 offset_top = 58.0
@@ -86,24 +82,6 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1502660410]
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1004181662]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=777507909]
-shape = SubResource("CircleShape2D_5ysvq")
-
-[node name="Testing_body" type="RigidBody2D" parent="." unique_id=2136003039]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Testing_body" unique_id=417149631]
-shape = SubResource("RectangleShape2D_5ysvq")
-
-[node name="Label" type="Label" parent="." unique_id=1827746223]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "asdeasdadasda
-"
 
 [connection signal="body_entered" from="Left_and_Right_Col" to="Left_and_Right_Col" method="_on_body_entered"]
 [connection signal="body_entered" from="Top_and_Bot_Col2" to="Top_and_Bot_Col2" method="_on_body_entered"]
