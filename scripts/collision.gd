@@ -13,6 +13,7 @@ func _on_area_entered(area: Area2D) -> void:
 	# send signal to ball_physics and will change the angle
 	# depending on the string sent
 	if area.is_in_group("Paddle"):
+		print(":hi")
 		bouncey.emit("Paddle")
 	if area.is_in_group("Border"):
 		bouncey.emit("Border")
