@@ -12,3 +12,7 @@ func _on_player_v_ai_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_player_v_player_mouse_exited() -> void:
+	pass # Replace with function body.

@@ -1,6 +1,7 @@
 extends Node2D
-@onready var label: Label = $Label
-@onready var button: Button = $Button
+
+@onready var button: Button = $Control/Button
+@onready var label: Label = $Control/Label
 
 
 # Called when the node enters the scene tree for the first time.

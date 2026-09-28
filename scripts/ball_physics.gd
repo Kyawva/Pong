@@ -54,7 +54,7 @@ func bounce(identifier:String) -> void:
 		if speed_up_once:
 			speed = originial_speed
 			speed_up_once = false
-		print(angle)
+		
 		
 		if body.position.x < 600:
 			if (direction1 < 0 and body.velocity.y < 0) or (direction1 > 0 and body.velocity.y > 0):
@@ -82,6 +82,6 @@ func _on_timer_timeout() -> void:
 
 func angle_change() -> void:
 	angle = deg_to_rad(170*randi_range(-1,1))
-	print(angle)
+	
 	if angle == 0:
 		angle = deg_to_rad(160)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://s7wgnbiqw150"]
 
 [ext_resource type="Script" uid="uid://bk1x5bk0fix8f" path="res://scripts/buttons.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://b3heofeecb5b1" path="res://scripts/tween.gd" id="2_ekxnf"]
 
 [node name="MainMenu" type="Node2D" unique_id=1957934073]
 script = ExtResource("1_l6cm7")
@@ -20,8 +21,10 @@ offset_left = 367.0
 offset_top = 79.0
 offset_right = -339.28003
 offset_bottom = -453.68002
+pivot_offset = Vector2(222, 57)
 text = "Player Vs Player
 "
+script = ExtResource("2_ekxnf")
 
 [node name="Player V AI" type="Button" parent="Buttons" unique_id=211626944]
 layout_mode = 0
@@ -29,7 +32,9 @@ offset_left = 367.0
 offset_top = 270.0
 offset_right = 812.72
 offset_bottom = 385.32
+pivot_offset = Vector2(222, 57)
 text = "Player Vs AI"
+script = ExtResource("2_ekxnf")
 
 [node name="Quit" type="Button" parent="Buttons" unique_id=1395632117]
 layout_mode = 0
@@ -37,7 +42,9 @@ offset_left = 369.0
 offset_top = 460.0
 offset_right = 814.72
 offset_bottom = 575.32
+pivot_offset = Vector2(222, 57)
 text = "Quit"
+script = ExtResource("2_ekxnf")
 
 [connection signal="pressed" from="Buttons/Player v Player" to="." method="_on_player_v_player_pressed"]
 [connection signal="pressed" from="Buttons/Player V AI" to="." method="_on_player_v_ai_pressed"]

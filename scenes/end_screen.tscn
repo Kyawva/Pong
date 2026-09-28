@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c7xcxtegrbgbf"]
 
 [ext_resource type="Script" uid="uid://c1a8gfqcif364" path="res://scripts/end_screen.gd" id="1_kq7ac"]
+[ext_resource type="Script" uid="uid://b3heofeecb5b1" path="res://scripts/tween.gd" id="2_6e1uj"]
 
-[node name="End screen AI" type="Node2D" unique_id=615133396]
+[node name="End screen" type="Node2D" unique_id=615133396]
 script = ExtResource("1_kq7ac")
 
 [node name="Control" type="Control" parent="." unique_id=1011807741]
@@ -11,8 +12,20 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="." unique_id=1749137451]
+[node name="Button" type="Button" parent="Control" unique_id=945943695]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 461.0
+offset_right = 846.0
+offset_bottom = 565.0
+pivot_offset = Vector2(254, 52)
+theme_override_font_sizes/font_size = 30
+text = "Go Back to Main Menu"
+script = ExtResource("2_6e1uj")
+
+[node name="Label" type="Label" parent="Control" unique_id=1749137451]
 custom_maximum_size = Vector2(1085, 417)
+layout_mode = 0
 offset_left = 39.0
 offset_top = 104.0
 offset_right = 1124.0
@@ -25,12 +38,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="." unique_id=945943695]
-offset_left = 338.0
-offset_top = 461.0
-offset_right = 846.0
-offset_bottom = 565.0
-theme_override_font_sizes/font_size = 30
-text = "Go Back to Main Menu"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
