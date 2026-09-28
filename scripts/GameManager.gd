@@ -14,6 +14,7 @@ var game_mode: GameMode
 
 signal End_screen()
 signal Change_score(Player:int, score:int )
+signal screen_shake(speed:int)
 
 func on_score(player:int) -> void:
 	
@@ -38,6 +39,11 @@ func check_win():
 			Character_winner = "Player 1"
 			win_or_lose = "lost"
 		End_screen.emit()
+		
+func screen_shaker(speed:int ) -> void:
+	screen_shake.emit(speed)
+		
+	
 
 
 		

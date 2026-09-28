@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bkadht57160lf" path="res://scenes/Paddle.tscn" id="2_h0bsx"]
 [ext_resource type="PackedScene" uid="uid://cqed6155whd33" path="res://scenes/ai.tscn" id="2_wstbl"]
 [ext_resource type="PackedScene" uid="uid://bhjsltfvg31mj" path="res://scenes/Ball.tscn" id="3_wstbl"]
+[ext_resource type="PackedScene" uid="uid://bx83ow434fsbc" path="res://scenes/screen_shake.tscn" id="6_s5dk7"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_s5dk7"]
 a = Vector2(0, -648)
@@ -83,6 +84,8 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ScreenShake" parent="." unique_id=555037181 instance=ExtResource("6_s5dk7")]
 
 [connection signal="body_entered" from="Left_and_Right_Col" to="Left_and_Right_Col" method="_on_body_entered"]
 [connection signal="body_entered" from="Top_and_Bot_Col2" to="Top_and_Bot_Col2" method="_on_body_entered"]

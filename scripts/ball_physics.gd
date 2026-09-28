@@ -62,13 +62,14 @@ func bounce(identifier:String) -> void:
 				
 				speed += 100
 				
-				screen_shake.emit(speed)
+				Gamemanager.screen_shaker(speed)
 			else:
 				speed -= 30				
 		else:
 			if (direction2 < 0 and body.velocity.y < 0) or (direction2 > 0 and body.velocity.y > 0):
-				screen_shake.emit(speed)
+				
 				speed += 100
+				Gamemanager.screen_shaker(speed)
 			else:
 				speed -= 30		
 		angle = deg_to_rad(180) - angle 
