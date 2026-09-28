@@ -20,6 +20,7 @@ var ball_inside: bool = true
 @onready var timer: Timer = $"../Timer"
 @onready var collision: collision = $"../collision"
 
+signal screen_shake(speed:int)
 
 
 func _ready() -> void:
@@ -45,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		angle_change()
 		
 		
-
+	
 	body.move_and_slide()
 
 
@@ -60,11 +61,13 @@ func bounce(identifier:String) -> void:
 			if (direction1 < 0 and body.velocity.y < 0) or (direction1 > 0 and body.velocity.y > 0):
 				
 				speed += 100
+				
+				screen_shake.emit(speed)
 			else:
 				speed -= 30				
 		else:
 			if (direction2 < 0 and body.velocity.y < 0) or (direction2 > 0 and body.velocity.y > 0):
-				
+				screen_shake.emit(speed)
 				speed += 100
 			else:
 				speed -= 30		

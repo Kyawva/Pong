@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bx83ow434fsbc"]
+
+[ext_resource type="Script" uid="uid://sfe6a5p1c2rf" path="res://scripts/screen_shake.gd" id="1_uimen"]
+[ext_resource type="Script" uid="uid://brpmiwgb6qysr" path="res://scripts/camera_2d.gd" id="2_8ogjx"]
+
+[node name="ScreenShake" type="Node2D" unique_id=555037181]
+script = ExtResource("1_uimen")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1959901823]
+position = Vector2(576, 324)
+script = ExtResource("2_8ogjx")

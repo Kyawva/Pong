@@ -22,6 +22,7 @@ scale = Vector2(0.647, 0.6)
 shape = SubResource("CircleShape2D_5ysvq")
 
 [node name="ball_physics" type="Node" parent="." unique_id=2053881573 node_paths=PackedStringArray("body")]
+unique_name_in_owner = true
 script = ExtResource("2_ja1hk")
 body = NodePath("..")
 metadata/_custom_type_script = "uid://do8v1wjvtsmt2"

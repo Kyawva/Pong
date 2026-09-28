@@ -1,5 +1,5 @@
 class_name collision extends Area2D
-@onready var ball_physics: ball_physics = $"../ball_physics"
+@onready var ball_physics: ball_physics = %ball_physics
 
 
 signal bouncey(String)
@@ -18,10 +18,13 @@ func _on_area_entered(area: Area2D) -> void:
 		bouncey.emit("Border")
 	if area.is_in_group("Border_left_right"):
 		if ball_physics.body.position.x > 250: 
+			
 			#first paddle is neg pos and second is pos 
+			
 			#scored.emit(1)
 			Gamemanager.on_score(1)
 		else:
 			#scored.emit(2)
 			Gamemanager.on_score(2)
+
 			
